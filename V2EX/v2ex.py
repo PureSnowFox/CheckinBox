@@ -47,6 +47,7 @@ def run(*arg):
         msg += data[0] + '\n'
     else:
         msg = '签到失败！\n'
+        print(sign.text)
         pusher("V2EX  签到失败！！！", sign.text[:200])
     return msg
 
