@@ -28,7 +28,7 @@ def run(*arg):
     }
     try:
         r = s.get(url, headers=headers, timeout=120)
-        # print(r.text)
+        print(r.text)
         if '每天登录' in r.text:
             h = etree.HTML(r.text)
             data = h.xpath('//tr/td[6]/text()')
