@@ -1,4 +1,4 @@
-FROM python:3.8.10
+FROM python:3.8.10-slim
 
 RUN python3 -m pip config set global.index-url https://mirrors.aliyun.com/pypi/simple
 
