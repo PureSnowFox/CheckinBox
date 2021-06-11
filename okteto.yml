@@ -1,9 +1,0 @@
-name: checkinbox
-image: docker.io/mengshouer/checkinbox:dev
-command: [ "python3", "pusher.py"]
-forward:
-  - 8080:8080
-reverse:
-  - 3500:3500
-persistentVolume:
-  enabled: false
