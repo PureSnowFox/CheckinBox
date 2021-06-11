@@ -1,33 +1,33 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: CheckinBox
+  name: checkinbox
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: CheckinBox
+      app: checkinbox
   template:
     metadata:
       labels:
-        app: CheckinBox
+        app: checkinbox
     spec:
       containers:
       - image: docker.io/mengshouer/checkinbox:dev
-        name: CheckinBox
+        name: checkinbox
 
 ---
 
 apiVersion: v1
 kind: Service
 metadata:
-  name: CheckinBox
+  name: checkinbox
   annotations:
     dev.okteto.com/auto-ingress: "true"
 spec:
   type: ClusterIP  
   ports:
-  - name: "CheckinBox"
+  - name: "checkinbox"
     port: 3000
   selector:
-    app: CheckinBox
+    app: checkinbox
