@@ -73,6 +73,7 @@ def main(*arg):
 
 
 if __name__ == "__main__":
+    print("test output")
     if cookie:
         print("----------V2EX开始尝试签到----------")
         main()
