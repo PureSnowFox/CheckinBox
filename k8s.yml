@@ -15,19 +15,3 @@ spec:
       containers:
       - image: docker.io/mengshouer/checkinbox:dev
         name: checkinbox
-
----
-
-apiVersion: v1
-kind: Service
-metadata:
-  name: checkinbox
-  annotations:
-    dev.okteto.com/auto-ingress: "true"
-spec:
-  type: ClusterIP  
-  ports:
-  - name: "checkinbox"
-    port: 3000
-  selector:
-    app: checkinbox

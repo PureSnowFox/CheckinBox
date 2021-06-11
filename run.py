@@ -12,16 +12,6 @@ from smzdmCheckin.smzdmCheckinForSCF import smzdm_pc as smzdm
 from V2EX.v2ex import main as v2ex
 from Zhiyou.zhiyou import main as zhiyou
 
-cookie_pj = os.environ.get("cookie_52pj")
-SCKEY = os.environ.get("SCKEY")
-SCTKEY = os.environ.get("SCTKEY")
-Skey = os.environ.get("Skey")
-Smode = os.environ.get("Smode")
-pushplus_token = os.environ.get("pushplus_token")
-pushplus_topic = os.environ.get("pushplus_topic")
-tg_token = os.environ.get("tg_token")
-tg_chatid = os.environ.get("tg_chatid")
-tg_api_host = os.environ.get("tg_api_host")
 username = os.environ.get("username")
 password = os.environ.get("password")
 fflogin_name = os.environ.get("fflogin_name")
@@ -29,6 +19,7 @@ fflogin_password = os.environ.get("fflogin_password")
 area_name = os.environ.get("area_name")
 server_name = os.environ.get("server_name")
 role_name = os.environ.get("role_name")
+cookie_pj = os.environ.get("cookie_52pj")
 cookie_smzdm = os.environ.get("cookie_smzdm")
 netease_username = os.environ.get("netease_username")
 netease_password = os.environ.get("netease_password")
@@ -39,12 +30,26 @@ cookie_enshan = os.environ.get("cookie_enshan")
 cookie_zhiyou = os.environ.get("cookie_zhiyou")
 
 def job():
+    print("run start")
+    if username and password:
+        c189()
+    if fflogin_name and fflogin_password and area_name and server_name and role_name:
+        ff14()
     if cookie_pj:
         pj()
     if cookie_smzdm:
         smzdm()
+    if netease_username and netease_password:
+        netease_music()
+    if note_username and note_password:
+        noteyoudao()
+    if cookie_v2ex:
+        v2ex()
     if cookie_enshan:
         enshan()
+    if cookie_zhiyou:
+        zhiyou()
+    print("run end")
 
 # 定时任务
 def scheduleTask():
