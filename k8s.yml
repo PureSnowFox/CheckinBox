@@ -5,4 +5,4 @@ metadata:
 spec:
   containers:
     - name: checkinbox
-      image: checkinbox:dev
+      image: docker.io/mengshouer/checkinbox:dev
