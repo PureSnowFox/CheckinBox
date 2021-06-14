@@ -92,20 +92,25 @@ def pjRate(*args):
 def pjCheckin(*args):
     global cookie
     msg = ""
-    if "\\n" in cookie:
-        clist = cookie.split("\\n")
-    else:
-        clist = cookie.split("\n")
-    i = 0
-    while i < len(clist):
-        msg += f"第 {i+1} 个账号开始执行任务\n"
-        cookie = clist[i]
-        msg += main()
-        if pj_rate:
-            msg += pjRate()
-        i += 1
-    print(msg[:-1])
-    return msg
+    namelist = ["cookie"]
+    if len(args):
+        for i in range(0, len(args)-1):
+            namelist[i] = args[i]
+    if cookie:
+        if "\\n" in cookie:
+            clist = cookie.split("\\n")
+        else:
+            clist = cookie.split("\n")
+        i = 0
+        while i < len(clist):
+            msg += f"第 {i+1} 个账号开始执行任务\n"
+            cookie = clist[i]
+            msg += main()
+            if pj_rate:
+                msg += pjRate()
+            i += 1
+        print(msg[:-1])
+        return msg
 
 if __name__ == "__main__":
     if cookie:

@@ -140,24 +140,29 @@ def run(*args):
 def main(*args):
     msg = ""
     global netease_username, netease_password
-    if "\\n" in netease_username:
-        ulist = netease_username.split("\\n")
-        plist = netease_password.split("\\n")
-    else:
-        ulist = netease_username.split("\n")
-        plist = netease_password.split("\n")
-    if len(ulist) == len(plist):
-        i = 0
-        while i < len(ulist):
-            msg += f"第 {i+1} 个账号开始执行任务\n"
-            netease_username = ulist[i]
-            netease_password = plist[i]
-            msg += run(netease_username, netease_password)
-            i += 1
-    else:
-        msg = "账号密码个数不相符"
-        print(msg)
-    return msg
+    namelist = ["netease_username", "netease_password"]
+    if len(args):
+        for i in range(0, len(args)-1):
+            namelist[i] = args[i]
+    if netease_username and netease_password:
+        if "\\n" in netease_username:
+            ulist = netease_username.split("\\n")
+            plist = netease_password.split("\\n")
+        else:
+            ulist = netease_username.split("\n")
+            plist = netease_password.split("\n")
+        if len(ulist) == len(plist):
+            i = 0
+            while i < len(ulist):
+                msg += f"第 {i+1} 个账号开始执行任务\n"
+                netease_username = ulist[i]
+                netease_password = plist[i]
+                msg += run(netease_username, netease_password)
+                i += 1
+        else:
+            msg = "账号密码个数不相符"
+            print(msg)
+        return msg
 
 
 if __name__ == "__main__":

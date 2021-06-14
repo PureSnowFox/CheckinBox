@@ -161,24 +161,29 @@ def login(username, password):
 def C189Checkin(*args):
     msg = ""
     global username, password
-    if "\\n" in username:
-        ulist = username.split("\\n")
-        plist = password.split("\\n")
-    else:
-        ulist = username.split("\n")
-        plist = password.split("\n")
-    if len(ulist) == len(plist):
-        i = 0
-        while i < len(ulist):
-            msg += f"第 {i+1} 个账号开始执行任务\n"
-            username = ulist[i]
-            password = plist[i]
-            msg += main(username, password)
-            i += 1
-    else:
-        msg = "账号密码个数不相符\n"
-    print(msg[:-1])
-    return msg
+    namelist = ["username", "password"]
+    if len(args):
+        for i in range(0, len(args)-1):
+            namelist[i] = args[i]
+    if username and password:
+        if "\\n" in username:
+            ulist = username.split("\\n")
+            plist = password.split("\\n")
+        else:
+            ulist = username.split("\n")
+            plist = password.split("\n")
+        if len(ulist) == len(plist):
+            i = 0
+            while i < len(ulist):
+                msg += f"第 {i+1} 个账号开始执行任务\n"
+                username = ulist[i]
+                password = plist[i]
+                msg += main(username, password)
+                i += 1
+        else:
+            msg = "账号密码个数不相符\n"
+        print(msg[:-1])
+        return msg
 
 if __name__ == "__main__":
     if username and password:

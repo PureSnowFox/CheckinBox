@@ -39,21 +39,26 @@ def run(*arg):
         pusher("智友邦  签到失败，可能是cookie失效了！！！", r.text[:200])
     return msg + '\n'
 
-def main(*arg):
+def main(*args):
     msg = ""
     global cookie
-    if "\\n" in cookie:
-        clist = cookie.split("\\n")
-    else:
-        clist = cookie.split("\n")
-    i = 0
-    while i < len(clist):
-        msg += f"第 {i+1} 个账号开始执行任务\n"
-        cookie = clist[i]
-        msg += run(cookie)
-        i += 1
-    print(msg[:-1])
-    return msg[:-1]
+    namelist = ["cookie"]
+    if len(args):
+        for i in range(0, len(args)-1):
+            namelist[i] = args[i]
+    if cookie:
+        if "\\n" in cookie:
+            clist = cookie.split("\\n")
+        else:
+            clist = cookie.split("\n")
+        i = 0
+        while i < len(clist):
+            msg += f"第 {i+1} 个账号开始执行任务\n"
+            cookie = clist[i]
+            msg += run(cookie)
+            i += 1
+        print(msg[:-1])
+        return msg[:-1]
 
 
 if __name__ == "__main__":

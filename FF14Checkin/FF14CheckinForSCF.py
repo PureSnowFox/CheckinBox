@@ -218,21 +218,26 @@ def main(*arg):
     else:
         return "签到失败..."
 
-def go(*arg):
+def go(*args):
     msg = ""
     global login_name, login_password, area_name, server_name, role_name
-    if "\\n" in login_name:
-        nlist = login_name.split("\\n")
-        plist = login_password.split("\\n")
-        alist = area_name.split("\\n")
-        slist = server_name.split("\\n")
-        rlist = role_name.split("\\n")
-    else:
-        nlist = login_name.split("\n")
-        plist = login_password.split("\n")
-        alist = area_name.split("\n")
-        slist = server_name.split("\n")
-        rlist = role_name.split("\n")
+    namelist = ["login_name", "login_password", "area_name", "server_name", "role_name"]
+    if len(args):
+        for i in range(0, len(args)-1):
+            namelist[i] = args[i]
+    if login_name and login_password and area_name and server_name and role_name:
+        if "\\n" in login_name:
+            nlist = login_name.split("\\n")
+            plist = login_password.split("\\n")
+            alist = area_name.split("\\n")
+            slist = server_name.split("\\n")
+            rlist = role_name.split("\\n")
+        else:
+            nlist = login_name.split("\n")
+            plist = login_password.split("\n")
+            alist = area_name.split("\n")
+            slist = server_name.split("\n")
+            rlist = role_name.split("\n")
 
     if len(nlist) == len(plist) == len(alist) == len(slist) == len(rlist):
         i = 0
@@ -249,7 +254,6 @@ def go(*arg):
         msg = "账号密码或其他参数个数不相符"
         print(msg)
     return msg
-
 
 if __name__ == "__main__":
     if login_name and login_password and area_name and server_name and role_name:

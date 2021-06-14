@@ -73,15 +73,21 @@ def login(username, password):
 
 
 def main(*args):
-    try:
-        with open('./config.json', 'r', encoding="utf8") as f:
-            data = json.load(f)
+    global note_username, note_password
+    namelist = ["note_username", "note_password"]
+    if len(args):
+        for i in range(0, len(args)-1):
+            namelist[i] = args[i]
+    if note_username and note_password:
+        try:
+            with open('./config.json', 'r', encoding="utf8") as f:
+                data = json.load(f)
+                msg = check(data)
+        except:
+            data = ""
             msg = check(data)
-    except:
-        data = ""
-        msg = check(data)
-    print(msg)
-    return msg
+        print(msg)
+        return msg
 
 def check(data):
     global note_username, note_password, user_dict

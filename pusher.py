@@ -77,5 +77,3 @@ def pusher(*args):
         r = requests.post(sendurl, data=params)
         testmsg += f"{r.text}\n"
     return testmsg
-
-
