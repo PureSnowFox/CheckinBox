@@ -4,3 +4,4 @@ beautifulsoup4
 cryptography
 lxml
 apscheduler
+pyyaml
