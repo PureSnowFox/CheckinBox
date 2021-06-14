@@ -56,7 +56,7 @@ def job():
 
 if __name__ == "__main__":
     job()
-    scheduler = BlockingScheduler(timezone='Asia/Shanghai')
+    scheduler = BlockingScheduler()
     scheduler.add_job(job, 'interval', id='job', hours=8)
     print('Press Ctrl+C to exit')
     scheduler.start()
