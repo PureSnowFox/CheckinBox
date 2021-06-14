@@ -1,8 +1,0 @@
-apiVersion: v1
-kind: Pod
-metadata:
-  name: checkinbox
-spec:
-  containers:
-    - name: checkinbox
-      image: docker.io/mengshouer/checkinbox:dev
