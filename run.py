@@ -14,46 +14,46 @@ from Zhiyou.zhiyou import main as zhiyou
 with open('/etc/config/config.yaml', encoding='utf-8') as f:
     data = yaml.safe_load(f)
 try:
-    os.environ["username"] = data["username"]
-    os.environ["password"] = data["password"]
+    os.system(f"export username={data['username']}")
+    os.system(f"export password={data['password']}")
 except:
     print("未设置天翼云配置")
 try:
-    os.environ["fflogin_name"] = data["fflogin_name"]
-    os.environ["fflogin_password"] = data["fflogin_password"]
-    os.environ["area_name"] = data["area_name"]
-    os.environ["server_name"] = data["server_name"]
-    os.environ["role_name"] = data["role_name"]
+    os.system(f"export fflogin_name={data['fflogin_name']}")
+    os.system(f"export fflogin_password={data['fflogin_password']}")
+    os.system(f"export area_name={data['area_name']}")
+    os.system(f"export server_name={data['server_name']}")
+    os.system(f"export role_name={data['role_name']}")
 except:
     print("未设置FF14配置")
 try:
-    os.environ["cookie_52pj"] = data["cookie_52pj"]
+    os.system(f"export cookie_52pj={data['cookie_52pj']}")
 except:
     print("未设置52pojie配置")
 try:
-    os.environ["cookie_smzdm"] = data["cookie_smzdm"]
+    os.system(f"export cookie_smzdm={data['cookie_smzdm']}")
 except:
     print("未设置什么值得买配置")
 try:
-    os.environ["netease_username"] = data["netease_username"]
-    os.environ["netease_password"] = data["netease_password"]
+    os.system(f"export netease_username={data['netease_username']}")
+    os.system(f"export netease_password={data['netease_password']}")
 except:
     print("未设置网易云音乐配置")
 try:
-    os.environ["note_username"] = data["note_username"]
-    os.environ["note_password"] = data["note_password"]
+    os.system(f"export note_username={data['note_username']}")
+    os.system(f"export note_password={data['note_password']}")
 except:
     print("未设置有道云笔记配置")
 try:
-    os.environ["cookie_v2ex"] = data["cookie_v2ex"]
+    os.system(f"export cookie_v2ex={data['cookie_v2ex']}")
 except:
     print("未设置v2ex配置")
 try:
-    os.environ["cookie_enshan"] = data["cookie_enshan"]
+    os.system(f"export cookie_enshan={data['cookie_enshan']}")
 except:
     print("未设置恩山论坛配置")
 try:
-    os.environ["cookie_zhiyou"] = data["cookie_zhiyou"]
+    os.system(f"export cookie_zhiyou={data['cookie_zhiyou']}")
 except:
     print("未设置智友邦配置")
 
