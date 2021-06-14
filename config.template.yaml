@@ -4,6 +4,6 @@ branch: $OKTETO_GIT_BRANCH
 
 # this comes from an okteto secret
 cookie_smzdm: $cookie_smzdm
-cookie_enshan:	$cookie_enshan
-Skey:	$Skey
-Smode:	$Smode
+cookie_enshan: $cookie_enshan
+Skey: $Skey
+Smode: $Smode
