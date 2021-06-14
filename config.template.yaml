@@ -3,7 +3,28 @@ commit: $OKTETO_GIT_COMMIT
 branch: $OKTETO_GIT_BRANCH
 
 # this comes from an okteto secret
+username: $username
+password: $password
+fflogin_name: $fflogin_name
+fflogin_password: $fflogin_password
+area_name: $area_name
+server_name: $server_name
+role_name: $role_name
 cookie_smzdm: $cookie_smzdm
+netease_username: $netease_username
+netease_password: $netease_password
+note_username: $note_username
+note_password: $note_password
+cookie_v2ex: $cookie_v2ex
 cookie_enshan: $cookie_enshan
+cookie_zhiyou: $cookie_zhiyou
+cookie_52pj: $cookie_52pj
 Skey: $Skey
 Smode: $Smode
+tg_chatid: $tg_chatid
+tg_token: $tg_token
+tg_api_host: $tg_api_host
+SCKEY: $SCKEY
+SCTKEY: $SCTKEY
+pushplus_token: $pushplus_token
+pushplus_topic: $pushplus_topic
