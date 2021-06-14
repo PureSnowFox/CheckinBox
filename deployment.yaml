@@ -17,7 +17,7 @@ spec:
       containers:
       - name: container
         image: docker.io/mengshouer/checkinbox:dev
-        command: [ "python3", "./PusherTest/PusherTest.py && " ,"python3", "./run.py" ]
+        command: [ "python3", "./run.py" ]
         volumeMounts:
         - name: config-volume
           mountPath: /etc/config
