@@ -8,4 +8,4 @@ WORKDIR /checkinbox
 
 RUN python3 -m pip install -r requirements.txt
 
-CMD ["python3", "run.py"]
+CMD python3 run.py

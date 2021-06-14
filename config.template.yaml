@@ -1,0 +1,9 @@
+# these two come from the pipeline environment
+commit: $OKTETO_GIT_COMMIT
+branch: $OKTETO_GIT_BRANCH
+
+# this comes from an okteto secret
+name:   $cookie_smzdm
+name:	$cookie_enshan
+name:	$Skey
+name:	$Smode

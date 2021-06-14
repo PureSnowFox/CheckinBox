@@ -1,0 +1,26 @@
+# deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: checkinbox
+  labels:
+    app: checkinbox
+spec:
+  selector:
+    matchLabels:
+      app: checkinbox
+  template:
+    metadata:
+      labels:
+        app: checkinbox
+    spec:
+      containers:
+      - name: container
+        image: docker.io/mengshouer/checkinbox:dev
+        volumeMounts:
+        - name: config-volume
+          mountPath: /etc/config
+      volumes:
+      - name: config-volume
+        configMap:
+          name: config-app
