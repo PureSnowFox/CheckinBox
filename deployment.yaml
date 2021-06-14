@@ -17,7 +17,7 @@ spec:
       containers:
       - name: container
         image: docker.io/mengshouer/checkinbox:dev
-        command: [ "/bin/sh", "-c", "cat /etc/config/config.yaml && echo && tail -f /dev/null" , "&& env" ]
+        command: [ "env" ]
         volumeMounts:
         - name: config-volume
           mountPath: /etc/config
