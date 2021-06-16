@@ -1,6 +1,6 @@
 # deployment.yaml
 apiVersion: apps/v1
-kind: Deployment
+kind: Pod
 metadata:
   name: checkinbox
   labels:
@@ -25,22 +25,3 @@ spec:
       - name: config-volume
         configMap:
           name: config-app
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: myapp-pod
-  labels:
-    app: myapp
-spec:
-  containers:
-  - name: myapp-container
-    image: docker.io/mengshouer/checkinbox:dev
-    command: ['sh', '-c', 'python3 run.py'].
-    volumeMounts:
-    - name: config-volume
-      mountPath: /etc/config
-  volumes:
-  - name: config-volume
-    configMap:
-      name: config-app
