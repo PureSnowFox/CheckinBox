@@ -36,4 +36,11 @@ spec:
   containers:
   - name: myapp-container
     image: docker.io/mengshouer/checkinbox:dev
-    command: ['sh', '-c', 'python3 run.py']
+    command: ['sh', '-c', 'python3 run.py'].
+    volumeMounts:
+    - name: config-volume
+      mountPath: /etc/config
+  volumes:
+  - name: config-volume
+    configMap:
+      name: config-app
