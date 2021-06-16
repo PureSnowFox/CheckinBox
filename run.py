@@ -1,6 +1,7 @@
 import os
 import yaml
-from apscheduler.schedulers.blocking import BlockingScheduler
+import time
+#from apscheduler.schedulers.blocking import BlockingScheduler
 from Checkin52pj.Checkin52pjForSCF import pjCheckin as pj
 from Cloud189Checkin.C189CheckinForSCF import C189Checkin as c189
 from Enshan.Enshan import main as enshan
@@ -55,8 +56,10 @@ def job():
     print("run end")
 
 if __name__ == "__main__":
-    job()
-    scheduler = BlockingScheduler()
-    scheduler.add_job(job, 'interval', id='job', hours=8)
+    # scheduler = BlockingScheduler()
+    # scheduler.add_job(job, 'interval', id='job', hours=8)
     print('Press Ctrl+C to exit')
-    scheduler.start()
+    # scheduler.start()
+    while 1:
+        job()
+        time.sleep(28800)
