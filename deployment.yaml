@@ -6,22 +6,14 @@ metadata:
   labels:
     app: checkinbox
 spec:
-  selector:
-    matchLabels:
-      app: checkinbox
-  template:
-    metadata:
-      labels:
-        app: checkinbox
-    spec:
-      containers:
-      - name: container
-        image: docker.io/mengshouer/checkinbox:dev
-        command: [ "/bin/sh", "-c", "python3 run.py"]
-        volumeMounts:
-        - name: config-volume
-          mountPath: /etc/config
-      volumes:
-      - name: config-volume
-        configMap:
-          name: config-app
+  containers:
+  - name: container
+    image: docker.io/mengshouer/checkinbox:dev
+    command: [ "/bin/sh", "-c", "python3 run.py"]
+    volumeMounts:
+    - name: config-volume
+      mountPath: /etc/config
+  volumes:
+  - name: config-volume
+    configMap:
+      name: config-app
