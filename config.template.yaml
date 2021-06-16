@@ -19,6 +19,7 @@ cookie_v2ex: $cookie_v2ex
 cookie_enshan: $cookie_enshan
 cookie_zhiyou: $cookie_zhiyou
 cookie_52pj: $cookie_52pj
+rate_52pj: $rate_52pj
 Skey: $Skey
 Smode: $Smode
 tg_chatid: $tg_chatid
