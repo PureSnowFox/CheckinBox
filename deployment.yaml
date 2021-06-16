@@ -18,7 +18,7 @@ spec:
       - name: container
         image: docker.io/mengshouer/checkinbox:dev
         command: [ "/bin/sh", "-c"]
-        args: ["python3 ./Checkin52pj/okteto_Checkin52pj.py && python3 ./V2EX/okteto_v2ex.py && python3 ./Zhiyou/okteto_zhiyou.py"]
+        args: ["python3 ./V2EX/okteto_v2ex.py && python3 ./Zhiyou/okteto_zhiyou.py"]
         volumeMounts:
         - name: config-volume
           mountPath: /etc/config
